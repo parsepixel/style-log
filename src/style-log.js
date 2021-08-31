@@ -6,7 +6,8 @@ import Color from "@parsepixel/color";
     /* console.style(params, params..)
     */
     function StyleLog(){
-        if(StyleLog.enabled && arguments){
+        // if(StyleLog.enabled && arguments){
+        if(arguments){
             if(typeof arguments[0] === 'string'){
                 let message = Array.prototype.shift.apply(arguments); //<-- removes first arg from arguments
 
@@ -83,24 +84,24 @@ import Color from "@parsepixel/color";
     }
 
     //Sanitize environment vars to toggle displaying console.style 
-    if(!!process.env.STYLE_LOG_ENABLED && isNaN(Number(process.env.STYLE_LOG_ENABLED))){
-        StyleLog._enabled = process.env.STYLE_LOG_ENABLED.toString().toLowerCase() === 'true';
-    } else if(!Number.isNaN(Number(process.env.STYLE_LOG_ENABLED))){
-        StyleLog._enabled = Boolean(Number(process.env.STYLE_LOG_ENABLED));
-    } else {
-        StyleLog._enabled = true;
-    }
+    // if(!!process.env.STYLE_LOG_ENABLED && isNaN(Number(process.env.STYLE_LOG_ENABLED))){
+    //     StyleLog._enabled = process.env.STYLE_LOG_ENABLED.toString().toLowerCase() === 'true';
+    // } else if(!Number.isNaN(Number(process.env.STYLE_LOG_ENABLED))){
+    //     StyleLog._enabled = Boolean(Number(process.env.STYLE_LOG_ENABLED));
+    // } else {
+    //     StyleLog._enabled = true;
+    // }
     
     //Getters and Setters
-    StyleLog.getEnabled = function(){ return StyleLog._enabled; };
-    StyleLog.setEnabled = function(b){ StyleLog._enabled = b; };
+    // StyleLog.getEnabled = function(){ return StyleLog._enabled; };
+    // StyleLog.setEnabled = function(b){ StyleLog._enabled = b; };
     
-    try {
-		Object.defineProperties(StyleLog, {
-			enabled			    : { get: StyleLog.getEnabled,
-								    set: StyleLog.setEnabled }
-		});
-    } catch (e) {}
+    // try {
+	// 	Object.defineProperties(StyleLog, {
+	// 		enabled			    : { get: StyleLog.getEnabled,
+	// 							    set: StyleLog.setEnabled }
+	// 	});
+    // } catch (e) {}
 
     function getStyle(type){
         let _style = '';
