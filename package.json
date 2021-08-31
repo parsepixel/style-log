@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "homepage": "https://parsepixel.com/style-log/",
-  "main": "src/style-log.js",
+  "main": "dist/style-log.js",
   "scripts": {
     "dev": "mix",
     "watch": "mix watch",
