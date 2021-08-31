@@ -1,0 +1,54 @@
+Arguments: 
+  /usr/local/Cellar/node/15.11.0/bin/node /usr/local/bin/yarn
+
+PATH: 
+  /usr/local/opt/php@7.3/sbin:/usr/local/opt/php@7.3/bin:/usr/local/opt/icu4c/sbin:/usr/local/opt/icu4c/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Users/parsepixel/.composer/vendor/bin
+
+Yarn version: 
+  1.22.10
+
+Node version: 
+  15.11.0
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: getaddrinfo ENOTFOUND registry.parsepixel.npme.io
+      at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:69:26)
+
+npm manifest: 
+  {
+    "name": "@parsepixel/style-log",
+    "version": "1.0.0",
+    "description": "",
+    "homepage": "https://parsepixel.com/style-log/",
+    "main": "src/style-log.js",
+    "scripts": {
+      "dev": "mix",
+      "watch": "mix watch",
+      "watch-poll": "mix watch -- --watch-options-poll=1000",
+      "hot": "mix watch --hot",
+      "production": "mix --production",
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git:parsepixel/style-log.git"
+    },
+    "author": {
+      "name": "ParsePixel",
+      "url": "https://github.com/parsepixel"
+    },
+    "license": "MIT",
+    "devDependencies": {
+      "@parsepixel/color": "github:parsepixel/color",
+      "laravel-mix": "^6.0.16"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
