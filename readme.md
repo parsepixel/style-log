@@ -57,11 +57,14 @@ console.style('{green}Cart Items',this.shoppingCart);
 ## Installation
 ```javascript
 npm install parsepixel/style-log
+
+In your main.js script import StyleLog which will appending the `style` method to the `window.console` Prototype. This allows for a single point of control and remove the need to import the library to each file. StyleLog uses RegExp to find and repalce matching opening and closing `{}` brackets and using the console.log `%c` format specifier to apply CSS styles to the content of the log statement.
+```javascript
+//typical import
+import StyleLog from '@parsepixel/style-log';
 ```
 
 If you are using **Node.js** and working with environment variables, you can set `STYLE_LOG_ENABLED` to false in Production .env and all the `console.style()` outputs won't be displayed in the DevTools.
-
-Style Log uses RegExp to find and repalce matching opening and closing `{}` brackets and using the console.log `%c` format specifier to apply CSS styles to the content of the log statement. By appending the `style` method to the `window.console` Prototype allows for a single point of control and removes the need to import the library to each file.
 
 
 ## Roadmap
