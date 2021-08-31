@@ -146,7 +146,7 @@ import Color from "@parsepixel/color";
                 if(validColor){
                     let displayColor = colorName;
                     if(modifier !== 0){
-                        let _a = Color._normalizeRGB(colorName);
+                        let _a = Color.normalizeRGB(colorName);
                         let _rgb = "rgb("+_a.r+","+_a.g+","+_a.b+")";
                         displayColor = Color.linearShade(_rgb, modifier);
                     }
