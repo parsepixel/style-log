@@ -88,7 +88,7 @@ import Color from "@parsepixel/color";
     } else if(!Number.isNaN(Number(process.env.STYLE_LOG_ENABLED))){
         StyleLog._enabled = Boolean(Number(process.env.STYLE_LOG_ENABLED));
     } else {
-        StyleLog._enabled = false;
+        StyleLog._enabled = true;
     }
     
     //Getters and Setters
