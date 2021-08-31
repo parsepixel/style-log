@@ -57,6 +57,7 @@ console.style('{green}Cart Items',this.shoppingCart);
 ## Installation
 ```javascript
 npm install parsepixel/style-log
+```
 
 In your main.js script import StyleLog which will appending the `style` method to the `window.console` Prototype. This allows for a single point of control and remove the need to import the library to each file. StyleLog uses RegExp to find and repalce matching opening and closing `{}` brackets and using the console.log `%c` format specifier to apply CSS styles to the content of the log statement.
 ```javascript
