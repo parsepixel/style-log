@@ -20,21 +20,21 @@ Substitue `console.log()` with `console.style()` and add the color, hex value, o
 console.style("Oh on, something went wrong {red}ACHTUNG"); 
 console.style("{CornflowerBlue}Can I get the icon in cornflower blue?"); 
 ```
-![picture Substitue console.log](examples/img/docs_usage1.jpg "Substitue console.log")
+![Substitue console.log](examples/img/docs_useage1.jpg "Substitue console.log")
 
 
 You can optionally to wrap a section of the string by adding the matching closing bracket of the same name.
 ```javascript
 console.style("This does not have css applied {#0000CD}while this is blue{/#0000CD} and this is not.");
 ```
-![Alt text](examples/img/docs_usage2.jpg?raw=true "Closing bracket")
+![Closing bracket](examples/img/docs_useage2.jpg?raw=true "Closing bracket")
 
 
 Can do multiple styles within a single log statment:
 ```javascript
 console.style('Ranked {gold}1st{/gold} with {#FF1493}1940 pts{/#FF1493} more than anyone else.');
 ```
-![Alt text](examples/img/docs_usage3.jpg?raw=true "Multiple colors")
+![Multiple colors](examples/img/docs_useage3.jpg?raw=true "Multiple colors")
 
 
 Easily adjust the **Tint** and **Shade** of a color by applying a multiplier. By simply adding `*` follow by a positive or negative number to multiple the value by, you can make the color bright or darker to help indicate a progression of steps.
@@ -45,7 +45,7 @@ console.style('{blue*2}response.data');
 console.style('{blue*3}success');
 console.style('{blue*4}next');
 ```
-![Alt text](examples/img/docs_usage4.jpg?raw=true "Color multipliers")
+![Color multipliers"](examples/img/docs_useage4.jpg?raw=true "Color multipliers")
 
 
 More complex css styles are gathered in a small collection of shortcuts that can be used to add some extra pop beyond just coloring the background. Have logs stand out by adding a color stroke around the border, round the end with border-radius, even change the font-size and family to really make it stand out. You can find additional shortcuts exmples and documentation [here](https://github.com/parsepixel/style-log/examples).
@@ -53,15 +53,15 @@ More complex css styles are gathered in a small collection of shortcuts that can
 ```javascript
 console.style('Whoops {warn}request error{/warn}');
 ```
-![Alt text](examples/img/docs_usage5.jpg?raw=true "Shortcut terms")
-![Alt text](examples/img/docs_usage7.jpg?raw=true "Shortcut examples")
+![Shortcut](examples/img/docs_useage5.jpg?raw=true)
+![Term examples](examples/img/docs_useage7.jpg?raw=true)
 
 
 Additional optional arguments passed through the function behaves the same as [console.log()](https://developer.mozilla.org/en-US/docs/Web/API/console/log) arguments and can be any number of JavaScript Objects, Strings, or Arrays displayed in the output.
 ```javascript
 console.style('{green}Cart Items',this.shoppingCart);
 ```
-![Alt text](examples/img/docs_usage6.jpg?raw=true "Additional arguments")
+![Additional arguments](examples/img/docs_useage6.jpg?raw=true "Additional arguments")
 
 
 ## Installation
