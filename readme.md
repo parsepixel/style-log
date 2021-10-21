@@ -14,16 +14,16 @@ There are three different ways to apply css styles:
 * `{term}` Choose from the collection of prefixed style shortcuts `{att}`, `{box}`, `{warn}`, etc.
 
 
-Substitue `console.log()` with `console.style()` and add the color, hex value, or shortcut term between `{}` brackets before the text you want to style.
+1. Substitue `console.log()` with `console.style()` and add the color, hex value, or shortcut term between `{}` brackets before the text you want to style.
 ```javascript
 console.style("Oh on, something went wrong {red}ACHTUNG"); 
 console.style("{CornflowerBlue}Can I get the icon in cornflower blue?"); 
 ```
-![Substitue console.log](examples/img/docs_useage1.jpg "Substitue console.log")
+![Substitue console.log](examples/img/docs_useage1.jpg?raw=true "Substitue console.log")
 
 
 
-You can optionally to wrap a section of the string by adding the matching closing bracket of the same name.
+2. You can optionally to wrap a section of the string by adding the matching closing bracket of the same name.
 ```javascript
 console.style("This does not have css applied {#0000CD}while this is blue{/#0000CD} and this is not.");
 ```
@@ -31,7 +31,7 @@ console.style("This does not have css applied {#0000CD}while this is blue{/#0000
 
 
 
-Can do multiple styles within a single log statment:
+3. Can do multiple styles within a single log statment:
 ```javascript
 console.style('Ranked {gold}1st{/gold} with {#FF1493}1940 pts{/#FF1493} more than anyone else.');
 ```
@@ -39,7 +39,7 @@ console.style('Ranked {gold}1st{/gold} with {#FF1493}1940 pts{/#FF1493} more tha
 
 
 
-Easily adjust the **Tint** and **Shade** of a color by applying a multiplier. By simply adding `*` follow by a positive or negative number to multiple the value by, you can make the color bright or darker to help indicate a progression of steps.
+4. Easily adjust the **Tint** and **Shade** of a color by applying a multiplier. By simply adding `*` follow by a positive or negative number to multiple the value by, you can make the color bright or darker to help indicate a progression of steps.
 ```javascript
 console.style('{blue}submit button clicked');
 console.style('{blue*1}send POST request');
@@ -51,26 +51,23 @@ console.style('{blue*4}next');
 
 
 
-More complex css styles are gathered in a small collection of shortcuts that can be used to add some extra pop beyond just coloring the background. Have logs stand out by adding a color stroke around the border, round the end with border-radius, even change the font-size and family to really make it stand out. You can find additional shortcuts exmples and documentation [here](https://github.com/parsepixel/style-log/examples).
+5. More complex css styles are gathered in a small collection of shortcuts that can be used to add some extra pop beyond just coloring the background. Have logs stand out by adding a color stroke around the border, round the end with border-radius, even change the font-size and family to really make it stand out. You can find additional shortcuts exmples and documentation [here](https://github.com/parsepixel/style-log/examples).
 ```javascript
 console.style('Whoops {warn}request error{/warn}');
 ```
-![Shortcut](examples/img/docs_useage5.jpg?raw=true)
+![Shortcut](examples/img/docs_useage5.jpg?raw=true "Shortcut")
 
 
 
-Some examples of preloaded shortcuts can be found on the ![examples](exampes/index.html) page.
-'box', 'att', 'warn', 'highlight', 'huge'
-![Term examples](examples/img/docs_useage7.jpg?raw=true)
+6. Some examples of preloaded shortcuts can be found on the [examples](examples/index.html) page.
+'box', 'att', 'warn', 'highlight', 'huge'.
+
+![Term examples](examples/img/docs_useage7.jpg?raw=true "Term examples")
 * Coming soon the option to create your own styles in an external `json` file.
 
 
 
-
-
-
-
-Additional optional arguments passed through the function behaves the same as [console.log()](https://developer.mozilla.org/en-US/docs/Web/API/console/log) arguments and can be any number of JavaScript Objects, Strings, or Arrays displayed in the output.
+7. Additional optional arguments passed through the function behaves the same as [console.log()](https://developer.mozilla.org/en-US/docs/Web/API/console/log) arguments and can be any number of JavaScript Objects, Strings, or Arrays displayed in the output.
 ```javascript
 console.style('{green}Cart Items',this.shoppingCart);
 ```
