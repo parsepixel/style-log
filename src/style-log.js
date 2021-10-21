@@ -142,6 +142,12 @@ import Color from "@parsepixel/color";
             case 'warn':
                 _style = 'background:#d60b0b; padding: 3px; color: #fff; border-radius:4px; border:1px solid #fff;';
                 break;
+            case 'out':
+                _style = '→';
+                break;
+            case 'in':
+                _style = '←';
+                break;
             default:
                 if(validColor){
                     let displayColor = colorName;
