@@ -20,7 +20,7 @@ Substitue `console.log()` with `console.style()` and add the color, hex value, o
 console.style("Oh on, something went wrong {red}ACHTUNG"); 
 console.style("{CornflowerBlue}Can I get the icon in cornflower blue?"); 
 ```
-![Alt text](examples/img/docs_usage1.jpg?raw=true "Substitue console.log")
+![picture Substitue console.log](examples/img/docs_usage1.jpg "Substitue console.log")
 
 
 You can optionally to wrap a section of the string by adding the matching closing bracket of the same name.
