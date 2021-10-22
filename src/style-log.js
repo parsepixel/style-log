@@ -3,11 +3,10 @@ import Color from "@parsepixel/color";
 (function(window){
     "use strict";
 
-    /* console.style(params, params..)
+    /* console.style([attribute], [...attributes])
     */
     function StyleLog(){
-        // if(StyleLog.enabled && arguments){
-        if(arguments){
+        if(window.console.enabled && arguments){
             if(typeof arguments[0] === 'string'){
                 let message = Array.prototype.shift.apply(arguments); //<-- removes first arg from arguments
 
@@ -67,6 +66,7 @@ import Color from "@parsepixel/color";
                         if(arguments){
                             eval('console.log("'+_outputCopy+'",'+_outputStyle+',...arguments)');
                         } else {
+                            // Old attempts for reference
                             // Function.prototype.apply.call(console.log, console, Array.prototype.slice.call( eval('["'+_outputCopy+'",'+_outputStyle+']') ));
                             // Function.prototype.apply.call(console.log, console, eval('["'+_outputCopy+'",'+_outputStyle+']') );
                             // Function.prototype.apply.call(console.log, console, Array.prototype.slice.call(arguments));
@@ -83,25 +83,7 @@ import Color from "@parsepixel/color";
         }
     }
 
-    //Sanitize environment vars to toggle displaying console.style 
-    // if(!!process.env.STYLE_LOG_ENABLED && isNaN(Number(process.env.STYLE_LOG_ENABLED))){
-    //     StyleLog._enabled = process.env.STYLE_LOG_ENABLED.toString().toLowerCase() === 'true';
-    // } else if(!Number.isNaN(Number(process.env.STYLE_LOG_ENABLED))){
-    //     StyleLog._enabled = Boolean(Number(process.env.STYLE_LOG_ENABLED));
-    // } else {
-    //     StyleLog._enabled = true;
-    // }
-    
-    //Getters and Setters
-    // StyleLog.getEnabled = function(){ return StyleLog._enabled; };
-    // StyleLog.setEnabled = function(b){ StyleLog._enabled = b; };
-    
-    // try {
-	// 	Object.defineProperties(StyleLog, {
-	// 		enabled			    : { get: StyleLog.getEnabled,
-	// 							    set: StyleLog.setEnabled }
-	// 	});
-    // } catch (e) {}
+   
 
     function getStyle(type){
         let _style = '';
@@ -113,8 +95,9 @@ import Color from "@parsepixel/color";
         if(multiplierIndex !== -1){
             //color has * multiplier after the name
             colorName = type.slice(0,multiplierIndex);
-            modifier = parseInt(type.slice(multiplierIndex+1))/10;
-            // console.log("###### COLOR NAME "+ colorName+ " x: "+modifier);
+            let value = parseInt(type.slice(multiplierIndex+1));
+            //step up the increment so *1 actually is different than native color
+            modifier = value < 0 ? (value - 1)/10 :  (value + 1)/10;
         }
 
         //check if string is actually a color
@@ -125,7 +108,8 @@ import Color from "@parsepixel/color";
             validColor = true;
         }
 
-        //TODO Move style shortcuts. Add user custom styles to external script
+        //TODO 2.0 Move style shortcuts. Add user custom styles to external script
+        //TODO 2.0 With out/in also append to the start of the bracket those gliphs/acsii code?
         switch(colorName){
             case 'box':
                 _style = 'border:2px solid orange; border-radius:3px; padding:1px;';
@@ -163,6 +147,26 @@ import Color from "@parsepixel/color";
                 break;
         }
         return _style;
+    }
+
+    //Getters and Setters
+    window.console.getEnabled = function(){ return window.console._enabled; };
+    window.console.setEnabled = function(b){ window.console._enabled = b; };
+     
+    try {
+        Object.defineProperties(window.console, {
+            enabled			    : { get: window.console.getEnabled,
+                                    set: window.console.setEnabled }
+        });
+    } catch (e) {}
+
+    //Sanitize environment vars to toggle displaying console.style 
+    if(!!process.env.STYLE_LOG_ENABLED && isNaN(Number(process.env.STYLE_LOG_ENABLED))){
+        window.console.enabled = process.env.STYLE_LOG_ENABLED.toString().toLowerCase() === 'true';
+    } else if(!Number.isNaN(Number(process.env.STYLE_LOG_ENABLED))){
+        window.console.enabled = Boolean(Number(process.env.STYLE_LOG_ENABLED));
+    } else {
+        window.console.enabled = true;
     }
 
     window.console.style = StyleLog;
