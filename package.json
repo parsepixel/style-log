@@ -1,7 +1,7 @@
 {
   "name": "@parsepixel/style-log",
-  "version": "1.0.2",
-  "description": "",
+  "version": "1.1.0",
+  "description": "Easy way to add color and css styles to the output of console.log() in Chrome and Firefox DevlTools without needing css and complex %c syntax formatting.",
   "homepage": "https://parsepixel.com/style-log/",
   "main": "dist/style-log.js",
   "scripts": {
@@ -21,8 +21,10 @@
     "url": "https://github.com/parsepixel"
   },
   "license": "MIT",
+  "dependencies": {
+    "@parsepixel/color": "github:parsepixel/color"
+  },
   "devDependencies": {
-    "@parsepixel/color": "github:parsepixel/color",
     "laravel-mix": "^6.0.16"
   }
 }
